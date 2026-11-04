@@ -22,11 +22,19 @@ const message_length_min = 10;
 const item_quantity_min = 1;
 const item_quantity_max = 5;
 const products_list = [
-  { id: "pr01", product_name: "Audio-Technica ATH-M40x", unit_price: 39900 },
-  { id: "pr02", product_name: "Fiio Snowsky Echo Mini", unit_price: 37900 },
-  { id: "pr03", product_name: "Koss PortaPro", unit_price: 15900 },
+  {
+    id: "produkt01",
+    product_name: "Audio-Technica ATH-M40x",
+    unit_price: 39900,
+  },
+  {
+    id: "produkt02",
+    product_name: "Fiio Snowsky Echo Mini",
+    unit_price: 37900,
+  },
+  { id: "produkt03", product_name: "Koss PortaPro", unit_price: 15900 },
 ];
-const price_format = new Int1.NumberFormat("pl-PL", {
+const price_format = new Intl.NumberFormat("pl-PL", {
   style: "currency",
   currency: "PLN",
 });
@@ -120,7 +128,7 @@ function initFilter() {
       " pasujących produktów";
     not_a_message.hidden = found !== 0;
   }
-  input.addEventListener("input", filterThings());
+  input.addEventListener("input", filterThings);
 }
 
 // Te co robią zamówienie
@@ -134,7 +142,7 @@ function findThing(id) {
 
 function processHowMany(declared_number) {
   const numbered_number = Number(declared_number);
-  if (!Number.isInteger(no_of_things)) return null;
+  if (!Number.isInteger(numbered_number)) return null;
   if (
     numbered_number < item_quantity_min ||
     numbered_number > item_quantity_max
@@ -146,9 +154,9 @@ function processHowMany(declared_number) {
 function initOrder() {
   const order_form = document.querySelector("#order-form");
   if (!order_form) return;
-  const selector = order_form.querySelector("#product");
-  const number_inputer = form.querySelector("#ilosc");
-  const message_inputer = form.querySelector("#wiadomosc");
+  const selector = order_form.querySelector("#produkt");
+  const number_inputer = order_form.querySelector("#ilosc");
+  const message_inputer = order_form.querySelector("#wiadomosc");
   const order_value = document.querySelector("#order-value");
   const error_message = document.querySelector("#message-error");
   const summary = document.querySelector("#order-summary");
@@ -159,8 +167,8 @@ function initOrder() {
   const correction = "Proszę wybrać produkt i ilość (1-5).";
   // Do aktualizowania wartości
   function checkNumbers() {
-    const the_thing = findThings(selector.numbered_number);
-    const number_of_things = processHowMany(number_of_things.numbered_number);
+    const the_thing = findThing(selector.value);
+    const number_of_things = processHowMany(number_inputer.value);
     if (!the_thing || number_of_things === null) {
       order_value.textContent = correction;
       return false;
@@ -200,13 +208,13 @@ function initOrder() {
     checkNumbers();
   });
 
-  message_inputer.addEventListener("input", rmErrorMessage());
+  message_inputer.addEventListener("input", rmErrorMessage);
 
   order_form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const the_thing = findThings(selector.numbered_number);
-    const number_of_things = processHowMany(number_inputer.numbered_number);
-    const message_content = message_inputer.numbered_nber.trim();
+    const the_thing = findThing(selector.value);
+    const number_of_things = processHowMany(number_inputer.value);
+    const message_content = message_inputer.value.trim();
 
     if (message_content.length < message_length_min) {
       rmSummary();

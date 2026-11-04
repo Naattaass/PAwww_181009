@@ -1,7 +1,7 @@
 :root {
   --primary-color: #00ac89;
   --secondary-color: #26bbd9;
-  --text-color: #0d3fd3f;
+  --text-color: #0d3f3f;
   --background-color: #ffffff;
   --border-color: #ddd9e0;
   --warning-color: #c03920;
@@ -34,7 +34,7 @@ html[data-theme="dark"] {
 }
 
 main {
-  padding: var(--spacing) 0;
+  padding: var(--spacing2) 0;
 }
 
 body {
@@ -102,7 +102,8 @@ header {
   font-weight: bold;
 }
 
-.f_status .f_empty {
+.f_status,
+.f_empty {
   color: var(--muted-color);
   margin-bottom: var(--spacing1);
 }
@@ -147,6 +148,16 @@ textarea {
   width: 100%;
 }
 
+/* input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--spacing0);
+  border: 1px solid var(--background-color);
+  border-radius: 5px;
+  font-size: 16px;
+} */
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -190,12 +201,12 @@ td {
   text-align: left;
 }
 
-th [data-theme="light"] {
+html[data-theme="light"] th {
   background-color: var(--primary-color);
   color: white;
 }
 
-th [data-theme="dark"] {
+html[data-theme="dark"] th {
   background-color: var(--primary-color);
   color: white;
 }
@@ -213,13 +224,13 @@ form textarea {
   display: block;
   width: 100%;
   padding: var(--spacing0);
-  border: 1px solid var(---border-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--spacing_s);
   font-size: 16px;
 }
 
 form button[type="submit"] {
-  margin-top: var(--spacing);
+  margin-top: var(--spacing2);
 }
 
 label {
@@ -228,17 +239,7 @@ label {
   font-weight: bold;
 }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: var(--spacing0);
-  border: 1px solid var(--background-color);
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-a: focus-visible,
+a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
@@ -272,7 +273,7 @@ footer {
   margin-top: var(--spacing2);
 }
 
-#theme-toggle {
+#theme-switch {
   background-color: transparent;
   color: var(--text-color);
   border: 1px solid var(--border-color);
