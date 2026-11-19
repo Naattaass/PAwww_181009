@@ -1,0 +1,68 @@
+<section class="contact">
+  <h2 class="section_title">Zapytanie o produkt</h2>
+
+  <form id="order-form" method="get" action="kontakt.html">
+    <!--novalidate="false"-->
+    <label for="email">Adres e-mail*:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="produkt">Produkt*:</label>
+    <select id="produkt" name="produkt" required>
+      <option value="">Wybierz produkt</option>
+      <option value="produkt01">Audio-Technica ATH-M40x</option>
+      <option value="produkt02">Fiio Snowsky Echo Mini</option>
+      <option value="produkt03">Koss PortaPro</option>
+    </select>
+
+    <label for="ilosc">Liczba sztuk* (od 1 do 5):</label>
+    <input
+      type="number"
+      id="ilosc"
+      name="ilosc"
+      required
+      min="1"
+      max="5"
+      step="1"
+    />
+
+    <label for="wiadomosc">Wiadomość* (od 10 do 500 znaków):</label>
+    <textarea
+      id="wiadomosc"
+      name="wiadomosc"
+      required
+      minlength="10"
+      maxlength="500"
+    ></textarea>
+
+    <p class="f_error" id="message-error" hidden></p>
+
+    <p class="order_value" id="order-value" aria-live="polite">
+      Wybierz produkt i liczbę sztuk by zobaczyć wartość zamówienia
+    </p>
+
+    <button type="submit">Sprawdź zapytanie</button>
+  </form>
+
+  <dl class="summary" id="order-summary" hidden>
+    <dt>Produkt</dt>
+    <dd id="summary-product"></dd>
+
+    <dt>Liczba sztuk</dt>
+    <dd id="summary-quantity"></dd>
+
+    <dt>Wartość</dt>
+    <dd id="summary-total"></dd>
+
+    <dt>Wiadomość</dt>
+    <dd id="summary-message"></dd>
+  </dl>
+
+  <p class="notice">
+    *Wymagane; Formularz demonstracyjny. Dane pojawią się w adresie strony;
+    zapytanie nie zostanie zapisane ani wysłane e-mailem
+  </p>
+</section>
+<button type="button" id="theme-switch" aria-pressed="false">
+  Tryb niejasny
+</button>
+

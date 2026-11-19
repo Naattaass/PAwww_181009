@@ -1,0 +1,106 @@
+<section class="clock" aria-labelledby="clock-head">
+  <h2 class="section_title" id="clock-head">Zegarek</h2>
+  <p class="c_date" id="c-date"></p>
+  <p class="c_time" id="c-time"></p>
+  <button type="button" id="c-start">Rusz czas</button>
+  <button type="button" id="c-stop">Wstrzymaj czas</button>
+</section>
+
+<section class="catalogue_grid">
+  <h2 class="section_title">Nasza oferta</h2>
+
+  <p class="filter">
+    <label for="f-input"> Wyszukaj po nazwie: </label>
+    <input
+      type="search"
+      id="f-input"
+      name="query"
+      autocomplete="off"
+      placeholder="np. słuchawki"
+    />
+  </p>
+
+  <p class="f_status" id="f-status" aria-live="polite"></p>
+  <p class="f_empty" id="f-empty" aria-live="polite" hidden>
+    Z ubolewaniem stwierdzam brak produktów dla danego zapytania.
+  </p>
+
+  <article class="product_sheet">
+    <h3 class="product_sheet__title">Audio-Technica ATH-M40x</h3>
+    <img
+      class="product_sheet__image"
+      src="./img/ath-m40x.jpg"
+      alt="Zdjęcie przedstawiające słuchawki Audio-Technica ATH-M40x"
+      width="100%"
+      height="auto"
+    />
+    <p class="product_sheet__desc">
+      Monitory zamknięte o liniowej charakterystyce.
+    </p>
+    <p class="product_sheet__price">399 PLN</p>
+    <a
+      class="product_sheet__ref"
+      href="./produkt.html"
+      target="_self"
+      title="Zobacz szczegóły produktu"
+      >Zobacz szczegóły</a
+    >
+  </article>
+
+  <article class="product_sheet">
+    <h3 class="product_sheet__title">Fiio Snowsky Echo Mini</h3>
+    <img
+      class="product_sheet__image"
+      src="./img/echomini.jpg"
+      alt="Zdjęcie przedstawiające odtwarzacz przenośny Fiio Snowsky Echo Mini"
+      width="100%"
+      height="auto"
+    />
+    <p class="product_sheet__desc">
+      Podwójny DAC plus wyjścia 3.5mm i 4.4mm w retro stylu
+    </p>
+    <p class="product_sheet__price">379 PLN</p>
+  </article>
+
+  <article class="product_sheet">
+    <h3 class="product_sheet__title">Koss PortaPro</h3>
+    <img
+      class="product_sheet__image"
+      src="./img/portapro.jpg"
+      alt="Zdjęcie przedstawiające słuchawki nauszne Koss PortaPro"
+      width="100%"
+      height="auto"
+    />
+    <p class="product_sheet__desc">
+      Gateway drug solidnego dźwięku od '86 w cenie kabla głośnikowego
+    </p>
+    <p class="product_sheet__price">159 PLN</p>
+  </article>
+</section>
+
+<section class="l3_animations" aria-labelledby="l3-head">
+  <h2 id="l3-head" class="section_title">Tu napiszę coś mądrego</h2>
+  <article class="ani_container">
+    <button class="ani_object" type="button" id="ani-a" aria-pressed="false">
+      Animacja_A
+    </button>
+    <button class="ani_object" type="button" id="ani-b">
+      <!--  tabindex="0" -->
+      Animacja_B
+    </button>
+    <button class="ani_object" type="button" id="ani-c" aria-expanded="false">
+      Animacja_C
+    </button>
+  </article>
+
+  <p class="stat" id="counter-stat" role="status">
+    Liczba kroków C: <strong id="count-step">0</strong>/5
+  </p>
+  <button class="reset_button" type="button" id="reset-ac">Reset</button>
+  <hr />
+  <button type="button" id="check-server">Sprawdź komunikację</button>
+  <p class="stat" id="server-result" role="status"></p>
+</section>
+<button type="button" id="theme-switch" aria-pressed="false">
+  Tryb niejasny
+</button>
