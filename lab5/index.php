@@ -7,7 +7,7 @@ $id_projektu = 'demo-sklep';
 // mapa widoków
 $widoki = [
     'glowna' => ['etykieta' => 'Katalog', 'tytul' => 'Cheap-ish Audio', 'plik' => __DIR__ . '/html/glowna.html'], 
-    'produkt' => ['etykieta' => 'Prykladowy produkt', 'tytul' => 'Audio-Technica ATH-M40x', 'plik'=> __DIR__ . '/html/produkt.html'],
+    'produkt' => ['etykieta' => 'Przykladowy produkt', 'tytul' => 'Audio-Technica ATH-M40x', 'plik'=> __DIR__ . '/html/produkt.html'],
     'kontakt' => ['etykieta' => 'Kontakt', 'tytul' => 'Skontaktuj się z nami', 'plik' => __DIR__ . '/html/kontakt.html'],
     'filmy' => ['etykieta' => 'Sekcja video', 'tytul' => 'Video Hi-Fi Sekcja', 'plik' => __DIR__ . '/html/filmy.html'],];
 
@@ -56,7 +56,8 @@ $tytul_strony = $wybrany !== null ? $wybrany['tytul'] : 'Blad';
     </header>
     <nav>
             <?php foreach ($widoki as $klucz => $w): ?>
-            <a href="index.php?idp=<?php echo urlencode($klucz); ?>" <?php if ($klucz === $aktywny): ?>aria-current="page"<?php endif; ?>>
+            <a href="index.php?idp=<?php echo urlencode($klucz); ?>" 
+                <?php if ($klucz === $aktywny): ?>aria-current="page"<?php endif; ?>>
                 <?php echo htmlspecialchars($w['etykieta'], ENT_QUOTES, 'UTF-8'); ?>
             </a>
             <?php endforeach; ?>

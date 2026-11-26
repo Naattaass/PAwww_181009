@@ -1,0 +1,343 @@
+:root {
+  --primary-color: #00ac89;
+  --secondary-color: #26bbd9;
+  --text-color: #0d3f3f;
+  --background-color: #ffffff;
+  --border-color: #ddd9e0;
+  --warning-color: #c03920;
+  --surface-color: #ffffff;
+  --field-bg-color: #fffffd;
+  --muted-color: #5a6469;
+
+  --spacing_s: 5px;
+  --spacing0: 10px;
+  --spacing1: 15px;
+  --spacing2: 25px;
+  --spacing3: 40px;
+  --max-width: 1100px;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html[data-theme="dark"] {
+  --primary-color: #26bbd9;
+  --secondary-color: #00ac89;
+  --text-color: #ececf1;
+  --background-color: #15151a;
+  --border-color: #3e3a49;
+  --warning-color: #ff8f8d;
+  --surface-color: #1e1e36;
+  --field-bg-color: #26262a;
+  --muted-color: #a9b0ba;
+}
+
+main {
+  padding: var(--spacing2) 0;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing2);
+  color: var(--text-color);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+header {
+  padding: var(--spacing2) 0;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.catalogue_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing2);
+  padding: var(--spacing2) 0;
+}
+
+.catalog > :not(.product_sheet) {
+  grid-column: 1 / -1;
+}
+
+.product_sheet {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing2);
+  margin-bottom: var(--spacing2);
+  border-radius: 8px;
+}
+
+.product_sheet h2 {
+  margin-bottom: var(--spacing0);
+}
+
+.product_sheet__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: var(--spacing1);
+}
+
+.product_sheet__price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.product_sheet__ref {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.filter label {
+  display: block;
+  margin-bottom: var(--spacing0);
+  font-weight: bold;
+}
+
+.f_status,
+.f_empty {
+  color: var(--muted-color);
+  margin-bottom: var(--spacing1);
+}
+
+.f_error {
+  color: var(--warning-color);
+  font-weight: bold;
+  margin-top: var(--spacing0);
+}
+
+.order_value {
+  margin-top: var(--spacing2);
+  font-weight: bold;
+}
+
+.summary {
+  margin-top: var(--spacing2);
+  padding: var(--spacing1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+}
+
+.summary dt {
+  font-weight: bold;
+  margin-top: var(--spacing0);
+}
+
+.summary dd {
+  margin: 0 0 var(--spacing0) 0;
+}
+
+.l3_animations {
+  padding: var(--spacing2);
+  margin-top: var(--spacing3);
+  border-top: 2px solid var(--secondary-color);
+}
+
+.ani_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing2);
+  margin: var(--spacing2) 0;
+}
+
+.ani_object {
+  width: 160px;
+  height: 90px;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--spacing0);
+  font-size: 14px;
+  cursor: pointer;
+  transition: none; /*<- żeby animacje jobiło jQuery*/
+}
+
+.ani_object:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.stat {
+  margin: var(--spacing1) 0;
+  font-size: 14px;
+  color: var(--muted-color);
+}
+
+.reset_button {
+  margin-top: var(--spacing1);
+  background-color: var(--warning-color);
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 200px;
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--field-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--spacing_s);
+  padding: var(--spacing0);
+  font-size: 16px;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing2);
+  padding: var(--spacing2) 0;
+}
+
+nav a {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  text-decoration: none;
+  padding: var(--spacing0) var(--spacing1);
+  border-radius: var(--spacing_s);
+}
+
+nav a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing2) 0;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: var(--spacing0);
+}
+
+th,
+td {
+  border: 1px solid var(--text-color);
+  padding: var(--spacing0);
+  text-align: left;
+}
+
+html[data-theme="light"] th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+html[data-theme="dark"] th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+form label {
+  display: block;
+  margin-top: var(--spacing2);
+  margin-bottom: var(--spacing_s);
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: var(--spacing0);
+  border: 1px solid var(--border-color);
+  border-radius: var(--spacing_s);
+  font-size: 16px;
+}
+
+form button[type="submit"] {
+  margin-top: var(--spacing2);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing_s);
+  font-weight: bold;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  padding: var(--spacing2) 0;
+  border-top: 2px solid var(--primary-color);
+  margin-top: var(--spacing2);
+}
+
+@media (min-width: 768px) {
+  .catalogue_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#theme-switch {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+#count-step {
+  color: var(--text-color);
+}
+
+#check-server {
+  margin-top: var(--spacing2);
+}
+
+#server-result {
+  margin-top: var(--spacing1);
+  font-weight: bold;
+}
+
+#c-date,
+#c-time {
+  display: inline-block;
+  margin: 0;
+  margin-right: 1rem;
+}

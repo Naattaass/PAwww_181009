@@ -28,8 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $produkt_raw = $_POST['produkt'] ?? null;
     $ilosc_raw = $_POST['ilosc'] ?? null;
 
-    $produkt_id = filter_var($produkt_raw, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1],]);
-    $ilosc = filter_var($ilosc_raw, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 5],]);
+    $produkt_id = filter_var($produkt_raw, FILTER_VALIDATE_INT, ['options' => [
+        'min_range' => 1],]);
+    $ilosc = filter_var($ilosc_raw, FILTER_VALIDATE_INT, ['options' => [
+        'min_range' => 1, 'max_range' => 5],]);
     
     $wybor = null;
     if ($produkt_id !== false) {
@@ -64,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $ostatni_wybor = $_SESSION['ostatni_wybor'] ?? null;
 ?>
+
 <!doctype html>
 <html lang="pl" data-theme="light">
     <head>
@@ -76,7 +79,7 @@ $ostatni_wybor = $_SESSION['ostatni_wybor'] ?? null;
 <?php include __DIR__ . '/includes/naglowek.php'; ?>
 
 <main>
-            <p><a href="index.php">&larr; Powrót do strony głównej</a></p>
+            <p><a href="./index.php">&larr; Powrót do strony głównej</a></p>
             <p class="f_status">Identyfikator grupy: <?php echo htmlspecialchars($grupa, ENT_QUOTES, 'UTF-8'); ?></p>
 
   <?php if ($filtr_blad !== ''): ?>
